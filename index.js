@@ -29,7 +29,7 @@ app.get('/love', (req, res) => {
         <title>Love for My Wife</title>
       </head>
       <body>
-        <h1>I love you, [Your Wife's Name]!</h1>
+        <h1>I love you, Vaishnavi!</h1>
         <p>You are the light of my life and my best friend. Every day with you is a beautiful adventure, and I am so grateful to have you by my side. I cherish every moment we spend together and look forward to creating many more wonderful memories. I love you more than words can express.</p>
       </body>
     </html>
