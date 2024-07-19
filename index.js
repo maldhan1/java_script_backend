@@ -42,6 +42,7 @@ const app = express();
 
 const port = process.env.PORT || 4000;
 
+// Define routes
 app.get('/', (req, res) => {
   res.send('Hello World!');
 });
@@ -51,7 +52,7 @@ app.get('/twitter', (req, res) => {
 });
 
 app.get('/youtube', (req, res) => {
-  res.send('<h2> maldhan linux to devops</h2>');
+  res.send('<h2>maldhan linux to devops</h2>');
 });
 app.get('/github', (req, res) => {
   res.json(githubdata);
@@ -59,182 +60,10 @@ app.get('/github', (req, res) => {
 
 
 app.get('/login', (req, res) => {
-  res.send('<h1> please login at maldhan.com </h1>');
+  res.send('<h1>Please login at maldhan.com</h1>');
 });
 
-// Define 100 love messages
-const loveMessages = [
-  'You are my sunshine on a cloudy day.',
-  'My love for you grows stronger every day.',
-  'You make my heart skip a beat.',
-  'I am so lucky to have you in my life.',
-  'Your smile is my favorite thing in the world.',
-  'You are my best friend and soulmate.',
-  'I love you more than words can say.',
-  'You are my everything.',
-  'You complete me.',
-  'Forever and always, I love you.',
-  'You are the love of my life.',
-  'Every moment with you is a treasure.',
-  'You make me a better person.',
-  'You are my heart’s desire.',
-  'My world revolves around you.',
-  'You are my dream come true.',
-  'I cherish every moment with you.',
-  'You make my heart full.',
-  'You are my happiness.',
-  'You are the reason I smile.',
-  'I am grateful for you every day.',
-  'You are my one and only.',
-  'You are the light in my life.',
-  'My heart beats for you.',
-  'You are my forever love.',
-  'You are my angel.',
-  'You are my joy.',
-  'You are my safe haven.',
-  'You are my heart’s melody.',
-  'I adore you.',
-  'You are my sunshine.',
-  'You are my favorite person.',
-  'You are my soulmate.',
-  'I fall in love with you every day.',
-  'You are my heart’s desire.',
-  'You make my dreams come true.',
-  'You are my paradise.',
-  'You are my everything.',
-  'You are the love of my life.',
-  'You are my joy.',
-  'You are my heart’s wish.',
-  'You are my beautiful reality.',
-  'You are my reason for living.',
-  'You are my heart’s content.',
-  'You are my perfect match.',
-  'You are my one true love.',
-  'I love you more every day.',
-  'You are my passion.',
-  'You are my happiness.',
-  'You are my love and joy.',
-  'You are my dream come true.',
-  'You are my reason for being.',
-  'You are my heart’s peace.',
-  'You are my eternal love.',
-  'You are my beloved.',
-  'You are my heart’s treasure.',
-  'You are my sweetest love.',
-  'You are my forever friend.',
-  'You are my love and light.',
-  'You are my precious gem.',
-  'You are my joy and delight.',
-  'You are my heart’s blessing.',
-  'You are my greatest joy.',
-  'You are my heart’s delight.',
-  'You are my one true soulmate.',
-  'You are my everything.',
-  'You are my life’s happiness.',
-  'You are my heart’s love.',
-  'You are my sweetest joy.',
-  'You are my dream.',
-  'You are my love story.',
-  'You are my heart’s wish.',
-  'You are my beloved one.',
-  'You are my reason for joy.',
-  'You are my heart’s desire.',
-  'You are my eternal sunshine.',
-  'You are my one true love.',
-  'You are my love and joy.',
-  'You are my everything.',
-  'You are my heart’s content.',
-  'You are my joy and happiness.',
-  'You are my forever love.',
-  'You are my precious one.',
-  'You are my love and light.',
-  'You are my heart’s delight.',
-  'You are my dream come true.',
-  'You are my eternal love.',
-  'You are my forever joy.',
-  'You are my heart’s happiness.',
-  'You are my precious gem.',
-  'You are my greatest love.',
-  'You are my heart’s treasure.',
-  'You are my dearest love.',
-  'You are my joy and peace.',
-  'You are my dream.',
-  'You are my heart’s light.',
-  'You are my one and only.',
-  'You are my sweet love.',
-  'You are my forever happiness.',
-  'You are my heart’s joy.',
-  'You are my beloved partner.',
-  'You are my one true soulmate.',
-  'You are my heart’s delight.',
-  'You are my eternal sunshine.',
-  'You are my love and my life.',
-  'You are my greatest happiness.',
-  'You are my everything.',
-  'You are my joy and light.',
-  'You are my heart’s content.',
-  'You are my dearest one.',
-  'You are my sweetest joy.',
-  'You are my heart’s desire.',
-  'You are my forever love.',
-  'You are my greatest treasure.',
-  'You are my dream come true.',
-  'You are my heart’s passion.',
-  'You are my one true love.',
-  'You are my love and joy.',
-  'You are my eternal happiness.',
-  'You are my heart’s sunshine.',
-  'You are my sweetest love.',
-  'You are my joy and peace.',
-  'You are my dearest love.',
-  'You are my forever happiness.',
-  'You are my heart’s light.',
-  'You are my dream come true.',
-  'You are my beloved.',
-  'You are my eternal love.',
-  'You are my heart’s happiness.',
-  'You are my joy and light.',
-  'You are my greatest love.',
-  'You are my everything.',
-  'You are my heart’s treasure.',
-  'You are my sweetest joy.',
-  'You are my love and life.',
-  'You are my heart’s content.',
-  'You are my dream and my joy.',
-  'You are my eternal sunshine.',
-  'You are my one true love.',
-  'You are my beloved.',
-  'You are my heart’s light.',
-  'You are my greatest happiness.',
-  'You are my sweetest love.',
-  'You are my joy and peace.',
-  'You are my forever love.',
-  'You are my heart’s delight.',
-  'You are my dream come true.',
-  'You are my love and joy.',
-  'You are my eternal happiness.',
-  'You are my heart’s content.',
-  'You are my greatest treasure.',
-  'You are my sweet love.',
-  'You are my joy and light.',
-  'You are my heart’s desire.',
-  'You are my one true soulmate.',
-  'You are my eternal love.',
-  'You are my greatest joy.',
-  'You are my sweetest joy.',
-  'You are my heart’s happiness.',
-  'You are my forever love.'
-];
-
 app.get('/love', (req, res) => {
-  const buttons = loveMessages.map((message, index) => {
-    return `
-      <button class="love-button" onclick="showMessage('${message}')">
-        Love Message ${index + 1}
-      </button>
-    `;
-  }).join('');
-
   res.send(`
     <html>
       <head>
@@ -298,6 +127,88 @@ app.get('/love', (req, res) => {
   `);
 });
 
+// Impressive webpage route
+app.get('/impressive', (req, res) => {
+  res.send(`
+    <html>
+      <head>
+        <title>Impressive Webpage</title>
+        <style>
+          body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 50px;
+          }
+          h1 {
+            color: #ff6600;
+            font-size: 3em;
+            margin-bottom: 20px;
+          }
+          p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 30px;
+          }
+          .impressive-box {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+          }
+          .impressive-box img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+          }
+          .impressive-button {
+            background-color: #ff6600;
+            color: white;
+            padding: 12px 24px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+          }
+          .impressive-button:hover {
+            background-color: #e65c00;
+          }
+          @keyframes pulse {
+            0% {
+              transform: scale(0.9);
+            }
+            50% {
+              transform: scale(1);
+            }
+            100% {
+              transform: scale(0.9);
+            }
+          }
+          .impressive-image {
+            animation: pulse 2s infinite;
+          }
+        </style>
+      </head>
+      <body>
+        <div class="impressive-box">
+          <h1>Welcome to the Impressive Webpage!</h1>
+          <p>Explore something truly amazing...</p>
+          <img class="impressive-image" src="https://via.placeholder.com/600x300" alt="Impressive Image">
+          <p>This is where you can find entertainment like never before!</p>
+          <a href="https://www.example.com" class="impressive-button">Visit the Impressive Website</a>
+        </div>
+      </body>
+    </html>
+  `);
+});
+
+// Start the server
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+  console.log(`Server is running on http://localhost:${port}`);
 });
