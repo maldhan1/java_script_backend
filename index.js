@@ -1,6 +1,43 @@
 require('dotenv').config();
 
 const express = require('express');
+const githubdata = {	
+  
+    "login": "maldhan1",
+    "id": 131853036,
+    "node_id": "U_kgDOB9vq7A",
+    "avatar_url": "https://avatars.githubusercontent.com/u/131853036?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/maldhan1",
+    "html_url": "https://github.com/maldhan1",
+    "followers_url": "https://api.github.com/users/maldhan1/followers",
+    "following_url": "https://api.github.com/users/maldhan1/following{/other_user}",
+    "gists_url": "https://api.github.com/users/maldhan1/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/maldhan1/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/maldhan1/subscriptions",
+    "organizations_url": "https://api.github.com/users/maldhan1/orgs",
+    "repos_url": "https://api.github.com/users/maldhan1/repos",
+    "events_url": "https://api.github.com/users/maldhan1/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/maldhan1/received_events",
+    "type": "User",
+    "site_admin": false,
+    "name": "Maldhan Shamrao Adhav",
+    "company": "kennovation software limited",
+    "blog": "",
+    "location": "pune",
+    "email": null,
+    "hireable": null,
+    "bio": "I am Maldhan, a AWS cloud engineer Engineer from 🇮🇳   passionate about developing production-ready environment  with 4+ years of professional onsite as well ",
+    "twitter_username": null,
+    "public_repos": 20,
+    "public_gists": 0,
+    "followers": 3,
+    "following": 57,
+    "created_at": "2023-04-26T07:04:45Z",
+    "updated_at": "2024-06-21T09:35:44Z"
+  }
+  
+  
 const app = express();
 
 const port = process.env.PORT || 4000;
@@ -16,6 +53,10 @@ app.get('/twitter', (req, res) => {
 app.get('/youtube', (req, res) => {
   res.send('<h2> maldhan linux to devops</h2>');
 });
+app.get('/github', (req, res) => {
+  res.json(githubdata);
+});
+
 
 app.get('/login', (req, res) => {
   res.send('<h1> please login at maldhan.com </h1>');
